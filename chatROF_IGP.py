@@ -57,8 +57,8 @@ def responder_consulta(results,query):
                 {"role": "assistant", "content": message_assist}]
 
     # Correr el modelo y obtener el reporte
-    response = openai.ChatCompletion.create(model='gpt-3.5-turbo', messages=messages, max_tokens=1800, 
-                                            n=1, stop=None, temperature=0.2)
+    response = openai.ChatCompletion.create(model='gpt-3.5-turbo', messages=messages, max_tokens=2000, 
+                                            n=1, stop=None, temperature=0.0)
     report = response['choices'][0]['message']['content'].strip()
     
     return report
