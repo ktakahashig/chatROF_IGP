@@ -77,6 +77,7 @@ if query != '':
    with st.spinner('Espere mientras la IA genera el reporte ...'):
       result = semantic_search(rof, query)
       respuesta= responder_consulta(result[:10],query)
+      st.success("Respuesta a consulta sobre: "+query)
       st.write(respuesta)
       dum=result[['Artículo','Numeral','Tema','Combinado','similarity']][:10].reset_index()
       dum = dum.drop(columns=['index'])
